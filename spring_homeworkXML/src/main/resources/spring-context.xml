@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="ReadQuestions" class="questions.questions.ReadQuestions">
+    <bean id="questionReader" class="questions.questions.QuestionReader">
     </bean>
 
     <bean id="personServiceImpl" class="questions.service.PersonServiceImpl">
-        <constructor-arg index="0" ref="ReadQuestions"/>
+        <constructor-arg index="0" ref="questionReader"/>
     </bean>
 
 </beans>
