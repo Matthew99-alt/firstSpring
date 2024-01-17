@@ -1,8 +1,5 @@
-ru/shumilin/spring02/dao/PersonDaoSimple.class
-ru/shumilin/spring02/domain/Person.class
-ru/shumilin/spring02/config/ServicesConfig.class
-ru/shumilin/spring02/config/DaoConfig.class
-ru/shumilin/spring02/Main.class
-ru/shumilin/spring02/dao/PersonDao.class
-ru/shumilin/spring02/service/PersonService.class
-ru/shumilin/spring02/service/PersonServiceImpl.class
+questions/questions/QuestionsReader.class
+questions/Main.class
+questions/service/PersonService.class
+questions/service/PersonServiceImpl.class
+questions/questions/QuestionsDAO.class

@@ -1,25 +1,28 @@
 package questions.service;
 
-import questions.questions.ReadQuestions;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import questions.questions.QuestionsDAO;
 
+@Service
 public class PersonServiceImpl implements PersonService {
 
-    private final ReadQuestions readQuestions;
+    private final QuestionsDAO readQuestionsDAO;
 
-    public PersonServiceImpl(ReadQuestions readQuestions) {
-
-        this.readQuestions = readQuestions;
-
+    public PersonServiceImpl(QuestionsDAO readQuestionsDAO) {
+        this.readQuestionsDAO = readQuestionsDAO;
     }
 
     public void askUser(String name, ArrayList<String> userAnswers) {
 
-        ArrayList<String> questions = new ArrayList<>(List.copyOf(readQuestions.findQuestion("questions.csv")));
-        ArrayList<String> rightAnswers = new ArrayList<>(List.copyOf(readQuestions.findQuestion("answers.csv")));
+        //TODO: вынести файлы с вопросами и ответами в resources
+        // InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(pathForTestQuestions); - в questionReader!
+
+        ArrayList<String> questions = new ArrayList<>(List.copyOf(readQuestionsDAO.findQuestion("spring_homework/questions.csv")));
+        ArrayList<String> rightAnswers = new ArrayList<>(List.copyOf(readQuestionsDAO.findQuestion("spring_homework/answers.csv")));
         int k = 0;
 
         System.out.println("Hello, " + name + "! Please, answer some questions: ");
