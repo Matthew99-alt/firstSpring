@@ -14,10 +14,6 @@ public class LoggingAspect {
     public void logBefore_AlbumDAO(JoinPoint joinPoint) {
         System.out.println("Вызов метода : " + joinPoint.getSignature().getName());
     }
-    @After("execution(* aspect_homework.service.AlbumAddInfo.*(..))")
-    public void logAfter_AlbumAddInfo(JoinPoint joinPoint) {
-        System.out.println("Был вызван метод : " + joinPoint.getSignature().getName());
-    }
     @Before("execution(* aspect_homework.service.AlbumFilter.*(..))")
     public void logBefore_AlbumFilter(JoinPoint joinPoint) {
         System.out.println("Вызов метода : " + joinPoint.getSignature().getName());

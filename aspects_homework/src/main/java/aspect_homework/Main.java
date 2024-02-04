@@ -27,7 +27,6 @@ public class Main {
         Album eternalBlue = service.findAlbum("Eternal Blue", "metalcore");
         Album everythingIsAlive = service.findAlbum("Everything is alive", "shogaze");
 
-
         albumAddInfo.addComposer("Pink Floyd",theWall);
         albumAddInfo.commentTheGenre(theWall);
         albumAddInfo.addComposer("The Jimmi Hendrix Experience",areYouExpirienced);
@@ -43,6 +42,5 @@ public class Main {
         albumFilter.hideAlbums("classic rock", albums);
 
         albumFilter.showAlbumsAndComment("classic rock", albums);
-
     }
 }

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
-@Service
 public class AlbumAddInfo {
     public void addComposer(String band, Album album){
         System.out.println("Album "+album.getTitle()+" was written by "+band);
