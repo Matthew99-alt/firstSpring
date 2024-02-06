@@ -1,12 +1,11 @@
-package askCode.service;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.stereotype.Service;
+import questions.QuestionsReader;
 
-@Service
 public class PersonServiceImpl {
 
     private final QuestionsReader readQuestionsDAO;
