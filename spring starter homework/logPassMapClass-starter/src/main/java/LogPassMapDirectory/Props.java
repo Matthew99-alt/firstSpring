@@ -1,19 +1,21 @@
 package LogPassMapDirectory;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 
+@Configuration
 @ConfigurationProperties(prefix="logpassmapclass")
 public class Props {
 
-    private HashMap<String, Integer> logpassmapclass;
+    private HashMap<String, Integer> logPassMap;
 
-    public HashMap<String, Integer> getLogPassMap() {
-        return logpassmapclass;
+    public Props(HashMap<String, Integer> logPassMap){
+        this.logPassMap = logPassMap;
     }
 
-    public void setLogPassMap(String login, Integer password) {
-        logpassmapclass.put(login, password);
+    public HashMap<String, Integer> getLogPassMap() {
+        return logPassMap;
     }
 }

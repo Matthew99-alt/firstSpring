@@ -8,8 +8,7 @@ public class LogPassMapClass {
     public LogPassMapClass(LogPassMapClassConfig config) {
         this.config = config;
     }
-
-    public HashMap<String, Integer> getMap(){
-        return config.getLopPassMap();
+    public String authorization(String login, Integer password) {
+        return config.checkLogPassMap(login,password);
     }
 }

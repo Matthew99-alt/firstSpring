@@ -8,6 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 
@@ -25,10 +26,17 @@ public class LogPassMapClassAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public String LogPassMapClassConfig() {
-        String message = props.getLogPassMap().isEmpty() ? "default message" : "hashmap is empty";
-        logger.info("AutoConfig. creating LogPassMapClassAutoConfiguration, default message: "+message);
-        return message;
+    public LogPassMapClassConfig logPassMapClassConfig() {
+        HashMap<String, Integer> map;
+        if(props.getLogPassMap()==null){
+            map = new HashMap<>();
+            logger.info("HashMap was not found, using default HashMap(empty):" + map);
+        }else{
+            HashMap<String, Integer> mappa = props.getLogPassMap();
+            map = new HashMap<>(mappa);
+            logger.info("HashMap was found, using founded HashMap:" + map);
+        }
+        return new LogPassMapClassConfig(map);
     }
 
     @Bean

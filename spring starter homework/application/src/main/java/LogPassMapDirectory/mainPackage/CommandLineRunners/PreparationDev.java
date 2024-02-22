@@ -21,6 +21,6 @@ public class PreparationDev implements CommandLineRunner {
     @Override
     public void run(String... args) {
         logger.info("DEV mode!!! Что-то настравиваем и подготавливаем, параметры: {} ", Arrays.toString(args));
-        logger.info("message from Messager:{}", logPassMapClass.getMap());
+        logger.info("Access:{}", logPassMapClass.authorization("Lennon",112374));
     }
 }

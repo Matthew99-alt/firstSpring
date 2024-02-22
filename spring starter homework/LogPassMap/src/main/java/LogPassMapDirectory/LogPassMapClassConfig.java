@@ -9,7 +9,13 @@ public class LogPassMapClassConfig {
         this.logPassMap = logPassMap;
     }
 
-    public HashMap<String, Integer> getLopPassMap(){
-        return logPassMap;
+    public String checkLogPassMap(String login, Integer password) {
+        String answer;
+        if(logPassMap.containsKey(login) && logPassMap.containsValue(password)){
+            answer = "granted";
+        }else{
+            answer = "denied";
+        }
+        return answer;
     }
 }
